@@ -1,0 +1,50 @@
+
+<div class="container mat-elevation-z5">
+  <form [formGroup]="rondelicaForm" (ngSubmit)="onSubmit()">
+    <div fxLayout="column">
+
+      <h2 fxLayoutAlign="center">Vnosna maska</h2>
+      <p>V polje se vpisuje merska enota v milimetrih (mm).</p>
+      <br>
+
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Dolžina traka</mat-label>
+        <input type="number" matInput formControlName="dolzinaTraku">
+        <span matSuffix>mm</span>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Širina traka</mat-label>
+        <input type="number" matInput formControlName="sirinaTraku">
+        <span matSuffix>mm</span>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Polmer rondelice</mat-label>
+        <input type="number" matInput formControlName="polmerRondelic">
+        <span matSuffix>mm</span>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Minimalna razdalja med robovi rondelic</mat-label>
+        <input type="number" matInput formControlName="razdaljaMedRondelicama">
+        <span matSuffix>mm</span>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Minimalna razdalja med začetkom in koncem traka robom rondelice</mat-label>
+        <input type="number" matInput formControlName="zacetekInKonecRob">
+        <span matSuffix>mm</span>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Minimalna razdalja med spodnjim in zgornjim robom traka rondelic</mat-label>
+        <input type="number" matInput formControlName="zgornjiInSpodnjiRob">
+        <span matSuffix>mm</span>
+      </mat-form-field>
+
+      <button mat-raised-button color="accent" type="submit" [disabled]="!rondelicaForm.valid">Izračunaj</button>
+
+    </div>
+  </form>
+</div>

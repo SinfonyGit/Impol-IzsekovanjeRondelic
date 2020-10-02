@@ -1,0 +1,11 @@
+
+
+<div class="izris-container" 
+  [ngStyle]="{'width.mm': dolzinaTraku, 'height.mm': sirinaTraku , 
+    'border-top-width.mm': zgornjiInSpodnjiRob, 'border-bottom-width.mm': zgornjiInSpodnjiRob,
+    'border-left-width.mm': zacetekInKonecRob, 'border-right-width.mm': zacetekInKonecRob
+  }">
+
+  <span *ngFor="let number of ngForRondelic" class="izris-rondelica"
+    [ngStyle]="{'width.mm': polmerRondelic, 'height.mm': polmerRondelic, 'margin.mm': (razdaljaMedRondelicama/2)}"></span>
+</div>

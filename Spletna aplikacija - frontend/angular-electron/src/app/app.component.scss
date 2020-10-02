@@ -1,0 +1,74 @@
+:host {
+  
+}
+
+.toolbar-item {
+  // margin-left: 10px;
+  // margin: 5px;
+  cursor: pointer;
+  margin: 5px;
+  border-radius: 4px;
+  padding: 4px 16px;
+  text-transform: uppercase;
+  letter-spacing: .3px;
+  &:hover{
+    background: hsla(0,0%,100%,.15);
+  }
+
+  &-active {
+    background: hsla(0,0%,100%,.15);
+  }
+
+}
+
+.home{
+  margin-left: 40px;
+}
+
+.content {
+  margin: 20px;
+}
+
+
+////////////////// SIDENAV
+
+.sidenav-container {
+  height: 100%;
+}
+  
+.sidenav {
+    width: 200px;
+}
+  
+.sidenav .mat-toolbar {
+    background: inherit;
+}
+  
+.mat-toolbar.mat-primary {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+
+
+.navigation-list {
+  position: relative;
+  padding: 0;
+  font: 18px/68px 'Questrial';
+  width: 180px;
+  text-align: center;
+  color: #ffffff;
+  background: #4b3065;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.navigation-list:hover {
+  background: #e36480 !important;
+}
+
+.navigation-list-active {
+  background: #e36480 !important;
+}

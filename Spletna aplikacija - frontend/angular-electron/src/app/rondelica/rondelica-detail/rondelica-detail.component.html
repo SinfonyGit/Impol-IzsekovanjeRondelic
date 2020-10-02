@@ -1,0 +1,41 @@
+
+
+  <div fxLayout="column" *ngIf="rondelica as item">
+    <br>
+    <h1 fxLayoutAlign="center">Izračun in Izris rondelice </h1>    
+    <div class="mat-elevation-z5 container" fxLayout="column" fxLayoutAlign="center center">
+      <h2>Osnovni podatki:</h2>
+      <div fxLayout="row">
+        <div>
+          <p>Število rondelic, ki jih pridobite: <strong>{{item.steviloOptimalnihRondelic}}</strong></p>
+          <p>Polmer rondelice: <strong>{{item.polmerRondelic}}mm</strong></p>
+        </div>
+        <div style="margin-left: 15px;">
+          <p>Dolžina traku: <strong>{{item.dolzinaTraku}}mm</strong></p>
+          <p>Širina traku: <strong>{{item.sirinaTraku}}mm</strong></p>
+        </div>
+        <div style="margin-left: 15px;">
+          <p>Začetek in konec roba: <strong>{{item.zacetekInKonecRob}}mm</strong></p>
+          <p>Zgornji in spodnji rob: <strong>{{item.zgornjiInSpodnjiRob}}mm</strong></p>
+        </div>
+        <div style="margin-left: 15px;">
+          <p>Razdalja med rondelicama: <strong>{{item.razdaljaMedRondelicama}}mm</strong></p>
+        </div>
+      </div>
+    </div>
+
+    <h1 fxLayoutAlign="center">Shema izrisa </h1> 
+
+    <div>
+      <app-rondelica-izris 
+        [sirinaTraku]="item.sirinaTraku"
+        [dolzinaTraku]="item.dolzinaTraku"
+        [polmerRondelic]="item.polmerRondelic"
+        [razdaljaMedRondelicama]="item.razdaljaMedRondelicama"
+        [zacetekInKonecRob]="item.zacetekInKonecRob"
+        [zgornjiInSpodnjiRob]="item.zgornjiInSpodnjiRob"
+        [steviloRondelic]="item.steviloOptimalnihRondelic"
+        ></app-rondelica-izris>
+    </div>
+
+  </div>

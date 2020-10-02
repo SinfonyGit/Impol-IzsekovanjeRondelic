@@ -1,0 +1,31 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="'over'" >
+    <mat-toolbar>
+      <img src="assets/images/Logo_Impol_sredina_v2-300x300.png" width="140" height="140" title="Home" alt="Home">
+    </mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item [routerLink]="['/']" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="toolbar-item-active">Domov</a>
+      <a mat-list-item [routerLink]="['/rondelica']" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="toolbar-item-active">Izračun</a>
+      <a mat-list-item [routerLink]="['/rondelica-list']" routerLinkActive="toolbar-item-active">Seznam</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <a routerLink="/" class="nav-link home">
+        <img src="assets/images/Impol-logotip.png" width="170" height="40" title="Home" alt="Home">
+      </a>
+      <div *ngIf="(isHandset$ | async) === false">
+        <span class="toolbar-item home" routerLink="/" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="toolbar-item-active">Domov</span>
+        <span class="toolbar-item" routerLink="/rondelica" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="toolbar-item-active">Izračun</span>
+        <span class="toolbar-item" routerLink="/rondelica-list" routerLinkActive="toolbar-item-active">Seznam</span>
+      </div>
+
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,20 @@
+
+.align-right {
+  display: grid;
+  justify-content: end;
+}
+
+
+
+table {
+  width: 100%;
+}
+
+
+.element-row:hover {
+  background: whitesmoke;
+}
+
+.element-row:active {
+  background: #efefef;
+}

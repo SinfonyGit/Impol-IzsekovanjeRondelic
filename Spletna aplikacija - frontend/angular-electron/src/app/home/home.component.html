@@ -1,0 +1,35 @@
+<div class="container">
+
+<h1 fxLayoutAlign="center">Aplikacija za optimalen izračun rondelic</h1>
+<br>
+<div fxLayout="row" fxLayoutGap="50px" fxLayoutAlign="center" fxLayout.lt-lg="column">
+  <div fxLayout="column"  class="presentation mat-elevation-z5">
+    <h2>Spletna aplikacija - Rondelice</h2>
+    <p>Začnite <a routerLink="/rondelica">Tukaj</a> z izračunom število rondelic.  </p>
+    <br>
+    <div fxLayout="row">
+      <h3>Status strežnika: &nbsp;</h3>
+      <div fxLayout="row" *ngIf="isOnline">
+        <h3> <u>Deluje</u>  &nbsp;</h3>
+        <mat-icon color="primary">check</mat-icon>
+      </div>
+      <div fxLayout="row" *ngIf="!isOnline">
+        <h3> <u>Nedeluje</u>  &nbsp;</h3>
+        <mat-icon color="warn">clear</mat-icon>
+      </div>
+    </div>
+    <div>
+      <h3>Število vnosov v bazo: {{totalRecords}}</h3>
+    </div>
+    
+
+  </div>
+  <div fxLayoutAlign="center center">
+    <img src="assets/images/rondelice.jpg" alt="" srcset="" class="image">
+  </div>
+
+</div>
+
+
+
+</div>

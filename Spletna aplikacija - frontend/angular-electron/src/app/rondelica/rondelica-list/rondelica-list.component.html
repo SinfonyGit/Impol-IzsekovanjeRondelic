@@ -1,0 +1,55 @@
+
+<div style="margin: 20px;">
+
+  <h1>Seznam vseh shranjenih vnosov rondelic</h1>
+  <br>
+  <mat-table [dataSource]="items" class="mat-elevation-z8">
+
+    <ng-container matColumnDef="id">
+      <mat-header-cell *matHeaderCellDef> ID </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.id}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="steviloOptimalnihRondelic">
+      <mat-header-cell *matHeaderCellDef> Število rondelic </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.steviloOptimalnihRondelic}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="dolzinaTraku">
+      <mat-header-cell *matHeaderCellDef> Dolžina traka </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.dolzinaTraku}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="sirinaTraku">
+      <mat-header-cell *matHeaderCellDef> Širina traka </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.sirinaTraku}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="polmerRondelic">
+      <mat-header-cell *matHeaderCellDef> Polmer Rondelice </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.polmerRondelic}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="zacetekInKonecRob">
+      <mat-header-cell *matHeaderCellDef> Začetek in konec roba traka</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.zacetekInKonecRob}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="zgornjiInSpodnjiRob">
+      <mat-header-cell *matHeaderCellDef> Zgornji In Spodnji Rob traka </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.zgornjiInSpodnjiRob}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+      <mat-header-cell *matHeaderCellDef class="align-right"></mat-header-cell>
+      <mat-cell *matCellDef="let element" class="align-right">
+        <button mat-icon-button (click)="getRondelicaId(element.id)">
+          <mat-icon color="primary">arrow_forward</mat-icon>
+        </button>
+      </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;" class="element-row"></mat-row>
+  </mat-table>
+</div>

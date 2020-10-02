@@ -1,0 +1,9 @@
+C:\Users\kleme\Desktop\naloge za zaposlitev\IMPOL- final\Strežnik - backend\IzracunStevilaRondelic\bin\Debug\netcoreapp3.1\AlgoritemOptimalnegaIzracunaRondelic.deps.json
+C:\Users\kleme\Desktop\naloge za zaposlitev\IMPOL- final\Strežnik - backend\IzracunStevilaRondelic\bin\Debug\netcoreapp3.1\AlgoritemOptimalnegaIzracunaRondelic.dll
+C:\Users\kleme\Desktop\naloge za zaposlitev\IMPOL- final\Strežnik - backend\IzracunStevilaRondelic\bin\Debug\netcoreapp3.1\AlgoritemOptimalnegaIzracunaRondelic.pdb
+C:\Users\kleme\Desktop\naloge za zaposlitev\IMPOL- final\Strežnik - backend\IzracunStevilaRondelic\obj\Debug\netcoreapp3.1\AlgoritemOptimalnegaIzracunaRondelic.csprojAssemblyReference.cache
+C:\Users\kleme\Desktop\naloge za zaposlitev\IMPOL- final\Strežnik - backend\IzracunStevilaRondelic\obj\Debug\netcoreapp3.1\AlgoritemOptimalnegaIzracunaRondelic.csproj.CoreCompileInputs.cache
+C:\Users\kleme\Desktop\naloge za zaposlitev\IMPOL- final\Strežnik - backend\IzracunStevilaRondelic\obj\Debug\netcoreapp3.1\AlgoritemOptimalnegaIzracunaRondelic.AssemblyInfoInputs.cache
+C:\Users\kleme\Desktop\naloge za zaposlitev\IMPOL- final\Strežnik - backend\IzracunStevilaRondelic\obj\Debug\netcoreapp3.1\AlgoritemOptimalnegaIzracunaRondelic.AssemblyInfo.cs
+C:\Users\kleme\Desktop\naloge za zaposlitev\IMPOL- final\Strežnik - backend\IzracunStevilaRondelic\obj\Debug\netcoreapp3.1\AlgoritemOptimalnegaIzracunaRondelic.dll
+C:\Users\kleme\Desktop\naloge za zaposlitev\IMPOL- final\Strežnik - backend\IzracunStevilaRondelic\obj\Debug\netcoreapp3.1\AlgoritemOptimalnegaIzracunaRondelic.pdb
