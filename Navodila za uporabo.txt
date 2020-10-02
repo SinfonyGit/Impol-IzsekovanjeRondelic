@@ -1,0 +1,30 @@
+
+Navodila za uporabo aplikacije Izsekovanje rondelice.
+
+Aplikacija Izsekovanje rondelice je sestavljena iz dveh delov.
+
+Prvi del oz aplikacija za uporabnika, je narejena v tehnologiji Angular od podjejta Google,
+medtem ko drugi strežniški del je narejen v .Net Core tehnologiji od Microsofta.
+
+
+Spletna aplikacija (Angular framework)
+
+Uporabniški vmesnik je narejen s pomočjo Material design knjižnice.
+V primeru da se želi aplikacija uporabljati kot Namizna aplikacija, je dodan modul "Electron" ki pretvori spletno aplikacija v namizno.
+
+Za namestitev oz pregled uporabniške aplikacije mora Developer imeti nameščen Node.js da lahko poganja testno okolje.
+Za zagon testne aplikacije gremo v mapo /Spletna aplikacija - frontend/angular-electron in v command promp imamo na voljo več ukazov:
+
+npm run ng:serve	Zažene aplikacijo v brskalniku
+npm run build	    Ustvari aplikacijo v  /dist mapi.
+npm run build:prod	    Ustvari aplikacijo z "ahead of time" parametrom v  /dist mapi.
+npm run electron:local	Zažene aplikacijo z electron pogonom in jo zažene
+npm run electron:build	Ustvari aplikacijo z electron pogonom in jo zažene ter naredi datoteke ustrezne na operacijski sistem. 
+  (Datoteke se potem nahajajo v release mapi)
+
+Strežniški del (.Net Core API)
+
+Za zagon strežnika v testnem okolju, gremo v mapo /Strežnik - backend/RestApi in v command promp zaženemo ukaz "dotnet run"
+
+Lastnosti:
+ - Strežik teče na portu 3000
