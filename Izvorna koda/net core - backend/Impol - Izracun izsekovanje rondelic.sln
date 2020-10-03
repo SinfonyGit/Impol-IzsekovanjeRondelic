@@ -5,8 +5,6 @@ VisualStudioVersion = 16.0.30104.148
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AlgoritemOptimalnegaIzracunaRondelic", "IzracunStevilaRondelic\AlgoritemOptimalnegaIzracunaRondelic.csproj", "{08865320-F51E-4729-9357-BB19E0D0AD8D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IzracunStevilaRondelicTest", "IzracunStevilaRondelicTest\IzracunStevilaRondelicTest.csproj", "{0A345AA0-C36D-4B6E-A819-B252A10BFE12}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RestApi", "RestApi\RestApi.csproj", "{4F1D1480-32A5-4EA3-B3C4-6CC627467651}"
 EndProject
 Global
@@ -19,10 +17,6 @@ Global
 		{08865320-F51E-4729-9357-BB19E0D0AD8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{08865320-F51E-4729-9357-BB19E0D0AD8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{08865320-F51E-4729-9357-BB19E0D0AD8D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0A345AA0-C36D-4B6E-A819-B252A10BFE12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0A345AA0-C36D-4B6E-A819-B252A10BFE12}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0A345AA0-C36D-4B6E-A819-B252A10BFE12}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0A345AA0-C36D-4B6E-A819-B252A10BFE12}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4F1D1480-32A5-4EA3-B3C4-6CC627467651}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4F1D1480-32A5-4EA3-B3C4-6CC627467651}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4F1D1480-32A5-4EA3-B3C4-6CC627467651}.Release|Any CPU.ActiveCfg = Release|Any CPU
