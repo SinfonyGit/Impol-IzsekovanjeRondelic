@@ -4,17 +4,17 @@
     <div fxLayout="column">
 
       <h2 fxLayoutAlign="center">Vnosna maska</h2>
-      <p>V polje se vpisuje merska enota v milimetrih (mm).</p>
+      <p>V polje se vpisuje število ki je v milimetrih (mm).</p>
       <br>
 
       <mat-form-field class="example-full-width" appearance="fill">
-        <mat-label>Dolžina traka</mat-label>
+        <mat-label>Dolžina traku</mat-label>
         <input type="number" matInput formControlName="dolzinaTraku">
         <span matSuffix>mm</span>
       </mat-form-field>
 
       <mat-form-field class="example-full-width" appearance="fill">
-        <mat-label>Širina traka</mat-label>
+        <mat-label>Širina traku</mat-label>
         <input type="number" matInput formControlName="sirinaTraku">
         <span matSuffix>mm</span>
       </mat-form-field>
@@ -32,18 +32,21 @@
       </mat-form-field>
 
       <mat-form-field class="example-full-width" appearance="fill">
-        <mat-label>Minimalna razdalja med začetkom in koncem traka robom rondelice</mat-label>
+        <mat-label>Razdalji spodaj in zgoraj</mat-label>
         <input type="number" matInput formControlName="zacetekInKonecRob">
         <span matSuffix>mm</span>
+        <mat-hint>Minimalna razdalja med rondelico in robovi traku</mat-hint>
       </mat-form-field>
-
+      <br>
       <mat-form-field class="example-full-width" appearance="fill">
-        <mat-label>Minimalna razdalja med spodnjim in zgornjim robom traka rondelic</mat-label>
+        <mat-label>Razdalji med začetkom in koncem</mat-label>
         <input type="number" matInput formControlName="zgornjiInSpodnjiRob">
         <span matSuffix>mm</span>
+        <mat-hint>Minimalna razdalja med rondelico in robovi traku</mat-hint>
       </mat-form-field>
+      <br>
 
-      <button mat-raised-button color="accent" type="submit" [disabled]="!rondelicaForm.valid">Izračunaj</button>
+      <button mat-raised-button color="accent" type="submit">Izračunaj</button>
 
     </div>
   </form>

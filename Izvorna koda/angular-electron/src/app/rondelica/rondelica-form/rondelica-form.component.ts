@@ -13,12 +13,12 @@ import { ErrorHandlingComponent } from 'app/error-handling/error-handling.compon
 export class RondelicaFormComponent implements OnInit {
 
   rondelicaForm = new FormGroup({
-    dolzinaTraku: new FormControl(500, Validators.required),
-    sirinaTraku: new FormControl(250, Validators.required),
-    polmerRondelic: new FormControl(22, Validators.required),
-    razdaljaMedRondelicama: new FormControl(10, Validators.required),
-    zgornjiInSpodnjiRob: new FormControl(15, Validators.required),
-    zacetekInKonecRob: new FormControl(30, Validators.required),
+    dolzinaTraku: new FormControl("", Validators.required),
+    sirinaTraku: new FormControl("", Validators.required),
+    polmerRondelic: new FormControl("", Validators.required),
+    razdaljaMedRondelicama: new FormControl("", Validators.required),
+    zgornjiInSpodnjiRob: new FormControl("", Validators.required),
+    zacetekInKonecRob: new FormControl("", Validators.required),
   });
 
   constructor(
@@ -31,10 +31,14 @@ export class RondelicaFormComponent implements OnInit {
   }
 
   onSubmit() {
-    this.rondelicaService.postRondelicaItem(this.rondelicaForm.value).subscribe(response => {
+    if(this.rondelicaForm.invalid) {
+      this.rondelicaForm.markAsTouched;
+    } else {
+      this.rondelicaService.postRondelicaItem(this.rondelicaForm.value).subscribe(response => {
       this.router.navigate(['/rondelica/' + response.id]);
-    },
-    err => this.openDialog(err));
+      },
+      err => this.openDialog(err));
+    }
   }
 
 
