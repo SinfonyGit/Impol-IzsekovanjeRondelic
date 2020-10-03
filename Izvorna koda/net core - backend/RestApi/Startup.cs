@@ -37,6 +37,8 @@ namespace RestApi
                     .AllowAnyOrigin()
                     .AllowAnyHeader());
             });
+
+            services.AddSwaggerDocument();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -44,6 +46,10 @@ namespace RestApi
         {
             loggerFactory.AddLog4Net();
             app.UseCors("CorsPolicy");
+
+            app.UseOpenApi();
+            app.UseSwaggerUi3();
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
