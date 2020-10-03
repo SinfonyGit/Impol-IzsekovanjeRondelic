@@ -1,1 +1,3 @@
-# Impol-IzsekovanjeRondelic - testni kommit
+# Impol-IzsekovanjeRondelic
+
+Aplikacija je narejena za nalogo pri podjetju Impol.
