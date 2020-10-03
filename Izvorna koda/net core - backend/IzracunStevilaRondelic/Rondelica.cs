@@ -1,14 +1,26 @@
 ﻿using System;
+using System.Diagnostics;
 
 namespace AlgoritemOptimalnegaIzracunaRondelic
 {
     public class Rondelica
     {
 
-        public static int IzracunRondelice(int sirinaTraka, int dolzinaTraka, int polmerRondelice, int razdaljaMedRondelicama, int zgornjiInSpodnjiRob, int zacetekInKonecRoba)
+        public static Tuple<int, string> IzracunRondelice(int sirinaTraka, int dolzinaTraka, int polmerRondelice, 
+            int razdaljaMedRondelicama, int zgornjiInSpodnjiRob, int zacetekInKonecRoba)
         {
-            int obdelovalnaPovrsina = DejanskaObdelovalnaPovrsina(sirinaTraka, dolzinaTraka, zgornjiInSpodnjiRob, zacetekInKonecRoba);
-            return IzracunSteviloRondelic(obdelovalnaPovrsina, polmerRondelice, razdaljaMedRondelicama);
+            var validacija = AlgoritemRondelicaValidations.ValidacijaAlgoritma(sirinaTraka, dolzinaTraka, polmerRondelice, 
+                razdaljaMedRondelicama, zgornjiInSpodnjiRob, zacetekInKonecRoba);
+
+            if (validacija.Item1 == false)
+            {
+                return new Tuple<int, string>(-999, validacija.Item2);
+            } else
+            {
+                int obdelovalnaPovrsina = DejanskaObdelovalnaPovrsina(sirinaTraka, dolzinaTraka, zgornjiInSpodnjiRob, zacetekInKonecRoba);
+                return new Tuple<int, string>(IzracunSteviloRondelic(obdelovalnaPovrsina, polmerRondelice, razdaljaMedRondelicama), "");
+            }
+            
         }
 
         public static int CelotnaPloscinaTrak(int sirinaTraka, int dolzinaTraka)

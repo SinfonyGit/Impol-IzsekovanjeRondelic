@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using log4net.Core;
@@ -93,12 +94,21 @@ namespace RestApi.Controllers
         public async Task<ActionResult<RondelicaItem>> PostRondelicaItem(RondelicaItem rondelicaItem)
         {
 
-            //return CreatedAtAction("GetRondelicaItem", new { id = rondelicaItem.Id }, rondelicaItem);
-            // return CreatedAtAction(nameof(GetRondelicaItem), new { id = rondelicaItem.Id }, rondelicaItem);
+            var algoritem = AlgoritemOptimalnegaIzracunaRondelic.Rondelica.IzracunRondelice(
+             rondelicaItem.SirinaTraku, rondelicaItem.DolzinaTraku, rondelicaItem.PolmerRondelic, rondelicaItem.RazdaljaMedRondelicama, rondelicaItem.ZgornjiInSpodnjiRob, rondelicaItem.ZacetekInKonecRob);
 
-
-            rondelicaItem.SteviloOptimalnihRondelic = AlgoritemOptimalnegaIzracunaRondelic.Rondelica.IzracunRondelice(
-                rondelicaItem.SirinaTraku, rondelicaItem.DolzinaTraku, rondelicaItem.PolmerRondelic, rondelicaItem.RazdaljaMedRondelicama, rondelicaItem.ZgornjiInSpodnjiRob, rondelicaItem.ZacetekInKonecRob);
+            if (algoritem.Item1 == -999)
+            {
+                return BadRequest(algoritem.Item2);
+            }
+            if (algoritem.Item1 < 0)
+            {
+                return BadRequest("Napaka na strani algoritma za izračun rondelic.");
+            }
+            else
+            {
+                rondelicaItem.SteviloOptimalnihRondelic = algoritem.Item1;
+            }
 
             _context.RondelicaItems.Add(rondelicaItem);
 
