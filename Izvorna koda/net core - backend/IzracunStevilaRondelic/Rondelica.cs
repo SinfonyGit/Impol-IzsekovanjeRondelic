@@ -17,8 +17,8 @@ namespace AlgoritemOptimalnegaIzracunaRondelic
                 return new Tuple<int, string>(-999, validacija.Item2);
             } else
             {
-                int obdelovalnaPovrsina = DejanskaObdelovalnaPovrsina(sirinaTraka, dolzinaTraka, zgornjiInSpodnjiRob, zacetekInKonecRoba);
-                return new Tuple<int, string>(IzracunSteviloRondelic(obdelovalnaPovrsina, polmerRondelice, razdaljaMedRondelicama), "");
+                return new Tuple<int, string>(izracunSteviloRondelic( sirinaTraka, dolzinaTraka, zgornjiInSpodnjiRob, zacetekInKonecRoba,
+                    polmerRondelice, razdaljaMedRondelicama), "");
             }
             
         }
@@ -38,17 +38,27 @@ namespace AlgoritemOptimalnegaIzracunaRondelic
             return ploscinaRobov;
         }
 
-        private static int DejanskaObdelovalnaPovrsina(int sirinaTraka, int dolzinaTraka, int zgornjiInSpodnjiRob, int zacetekInKonecRoba)
+        private static int izracunSteviloRondelic(
+            int sirinaTraka, int dolzinaTraka, int zgornjiInSpodnjiRob, 
+            int zacetekInKonecRoba, int polmerRondelice, int razdaljaMedRondelicama)
         {
-            int obdelovalnaPovrsina = CelotnaPloscinaTrak(sirinaTraka, dolzinaTraka) - PloscinaRobov(sirinaTraka, dolzinaTraka, zgornjiInSpodnjiRob, zacetekInKonecRoba);
-            return obdelovalnaPovrsina;
-        }
+            int notranjaDolzina = dolzinaTraka - (zacetekInKonecRoba * 2);
+            int notranjaSirina = sirinaTraka - (zgornjiInSpodnjiRob * 2);
 
-        private static int IzracunSteviloRondelic(int obdelovalnaPovrsina, int polmerRondelice, int razdaljaMedRondelicama)
-        {
-            int straniRondelice = polmerRondelice + (razdaljaMedRondelicama / 2);
-            int kvadratRondelica = straniRondelice * straniRondelice;
-            int steviloRondelic = obdelovalnaPovrsina / kvadratRondelica;
+            int stranicaRondelice = polmerRondelice + (razdaljaMedRondelicama);
+            int steviloRondelicVVrstici = (int)(notranjaDolzina / stranicaRondelice);
+            int steviloRondelicVStolpcu = (int)(notranjaSirina / stranicaRondelice);
+
+            int steviloRondelic = steviloRondelicVVrstici * steviloRondelicVStolpcu;
+
+            Trace.WriteLine("Notranja Dolžina: " + notranjaDolzina);
+            Trace.WriteLine("Notranja Širina: " + notranjaSirina);
+            Trace.WriteLine("Stranica rondelice: " + stranicaRondelice);
+
+            Trace.WriteLine("Vrstica: " + steviloRondelicVVrstici);
+            Trace.WriteLine("Stolpec: " + steviloRondelicVStolpcu);
+            Trace.WriteLine("Stevilo rondelic: " + steviloRondelic);
+
             return steviloRondelic;
         }
     }

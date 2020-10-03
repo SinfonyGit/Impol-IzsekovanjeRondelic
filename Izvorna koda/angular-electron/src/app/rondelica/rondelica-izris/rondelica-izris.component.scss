@@ -5,7 +5,7 @@
   // border-bottom : 15mm solid green;
   // border-left : 5mm solid green;
 
-  border-color: cadetblue;
+  border-color: cornflowerblue;
   border-style: solid;
   border-top-width  : 30px;
 
@@ -17,4 +17,9 @@
   background-color: #bbb;
   border-radius: 50%;
   display: inline-block;
+}
+
+.izris-rondelica :first-child {
+  margin-top: 0;
+  margin-left: 0;
 }

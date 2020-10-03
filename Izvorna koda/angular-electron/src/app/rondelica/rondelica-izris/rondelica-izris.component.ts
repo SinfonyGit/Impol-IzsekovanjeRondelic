@@ -14,6 +14,8 @@ export class RondelicaIzrisComponent implements OnInit {
   @Input() zacetekInKonecRob;
   @Input() zgornjiInSpodnjiRob;
   @Input() steviloRondelic: number;
+  delovnaSirinaTraku: number;
+  delovnaDolzinaTraku: number;
 
   ngForRondelic: any;
 
@@ -22,6 +24,8 @@ export class RondelicaIzrisComponent implements OnInit {
   ngOnInit() {
     // console.log(this.steviloRondelic, 'steviloRondelic');
     this.ngForRondelic = Array(this.steviloRondelic).fill(0).map((x,i)=>i);
+    this.delovnaSirinaTraku = this.sirinaTraku - (this.zgornjiInSpodnjiRob * 2);
+    this.delovnaDolzinaTraku = this.dolzinaTraku - (this.zacetekInKonecRob * 2);
   }
 
 }

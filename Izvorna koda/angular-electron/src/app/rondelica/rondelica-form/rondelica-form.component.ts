@@ -13,9 +13,9 @@ import { ErrorHandlingComponent } from 'app/error-handling/error-handling.compon
 export class RondelicaFormComponent implements OnInit {
 
   rondelicaForm = new FormGroup({
-    dolzinaTraku: new FormControl(400, Validators.required),
-    sirinaTraku: new FormControl(150, Validators.required),
-    polmerRondelic: new FormControl(30, Validators.required),
+    dolzinaTraku: new FormControl(500, Validators.required),
+    sirinaTraku: new FormControl(250, Validators.required),
+    polmerRondelic: new FormControl(22, Validators.required),
     razdaljaMedRondelicama: new FormControl(10, Validators.required),
     zgornjiInSpodnjiRob: new FormControl(15, Validators.required),
     zacetekInKonecRob: new FormControl(30, Validators.required),
