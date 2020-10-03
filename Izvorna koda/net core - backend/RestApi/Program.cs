@@ -18,9 +18,18 @@ namespace RestApi
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
+                .ConfigureLogging((context, logging) =>
+                {
+                    logging.ClearProviders();
+                    logging.AddLog4Net("log4net.config");
+                    logging.AddConfiguration(context.Configuration.GetSection("Logging"));
+                    logging.AddDebug();
+                    logging.AddConsole();
+                    
+                })
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
-                    webBuilder.UseUrls("http://localhost:3000");
+                    webBuilder.UseUrls("https://localhost:3000");
                     webBuilder.UseStartup<Startup>();
                 });
     }

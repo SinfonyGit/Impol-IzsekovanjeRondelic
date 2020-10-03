@@ -45,7 +45,7 @@ export class RondelicaComponent implements OnInit {
 
   dejanskaObdelovalnaPovrsina: number;
 
-  readonly ROOT_URL = 'http://localhost:3000/api';
+  readonly ROOT_URL = 'https://localhost:3000/api';
   rondelicaItems: RondelicaVnos;
   steviloVnosov: number = 10;
 

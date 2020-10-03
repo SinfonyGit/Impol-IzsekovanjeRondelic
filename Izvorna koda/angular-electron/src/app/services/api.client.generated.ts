@@ -22,7 +22,7 @@ export class RondelicaItemsServiceProxy {
 
     constructor(@Inject(HttpClient) http: HttpClient, @Optional() @Inject(API_BASE_URL) baseUrl?: string) {
         this.http = http;
-        this.baseUrl = baseUrl ? baseUrl : "http://localhost:3000";
+        this.baseUrl = baseUrl ? baseUrl : "https://localhost:3000";
     }
 
     getRondelicaItemAll(): Observable<RondelicaItem[]> {
@@ -293,7 +293,7 @@ export class WeatherForecastServiceProxy {
 
     constructor(@Inject(HttpClient) http: HttpClient, @Optional() @Inject(API_BASE_URL) baseUrl?: string) {
         this.http = http;
-        this.baseUrl = baseUrl ? baseUrl : "http://localhost:3000";
+        this.baseUrl = baseUrl ? baseUrl : "https://localhost:3000";
     }
 
     get(): Observable<WeatherForecast[]> {

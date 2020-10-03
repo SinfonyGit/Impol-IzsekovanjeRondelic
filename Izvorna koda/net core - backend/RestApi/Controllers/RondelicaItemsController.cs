@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using log4net.Core;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using RestApi.Models;
 
 namespace RestApi.Controllers
@@ -14,17 +16,25 @@ namespace RestApi.Controllers
     public class RondelicaItemsController : ControllerBase
     {
         private readonly RondelicaContext _context;
+        private readonly Microsoft.Extensions.Logging.ILogger _logger;
 
-        public RondelicaItemsController(RondelicaContext context)
+        public RondelicaItemsController(RondelicaContext context, ILogger<RondelicaItemsController> logger)
         {
             _context = context;
+            _logger = logger;
         }
+
+
+
 
         // GET: api/RondelicaItems
         [HttpGet]
         public async Task<ActionResult<IEnumerable<RondelicaItem>>> GetRondelicaItems()
         {
+
             return await _context.RondelicaItems.ToListAsync();
+
+            
         }
 
         // GET: api/RondelicaItems/5
@@ -33,8 +43,11 @@ namespace RestApi.Controllers
         {
             var rondelicaItem = await _context.RondelicaItems.FindAsync(id);
 
+            _logger.LogInformation("Pridobivanja podatka z ID: {Id}", id);
+
             if (rondelicaItem == null)
             {
+                _logger.LogWarning("ID:({Id}) Ni bilo mogoče najti.", id);
                 return NotFound();
             }
 
@@ -88,6 +101,8 @@ namespace RestApi.Controllers
                 rondelicaItem.SirinaTraku, rondelicaItem.DolzinaTraku, rondelicaItem.PolmerRondelic, rondelicaItem.RazdaljaMedRondelicama, rondelicaItem.ZgornjiInSpodnjiRob, rondelicaItem.ZacetekInKonecRob);
 
             _context.RondelicaItems.Add(rondelicaItem);
+
+            _logger.LogInformation("Dodan nov podatek.{rondelicaItem.id}", rondelicaItem);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction(nameof(GetRondelicaItem), new { id = rondelicaItem.Id, }, rondelicaItem);
